@@ -10,6 +10,7 @@ Log de Chat: Tanto o servidor quanto o cliente mantêm um log das mensagens troc
 Exportação de Log: Ambos podem exportar seus respectivos logs de chat para arquivos de texto (chat_log_server.txt e chat_log_client.txt). O log é anexado ao arquivo existente, permitindo múltiplas exportações.
 
 ChatServer.java 🖥️:
+
 Gerenciamento de Múltiplos Clientes: O servidor é capaz de lidar com várias conexões de clientes simultaneamente usando um ExecutorService (pool de threads).
 Porta Configurável: O administrador do servidor define a porta em que o servidor escutará por conexões ao iniciá-lo.
 
@@ -30,6 +31,7 @@ sair: Encerra o servidor, notifica todos os clientes conectados, fecha todas as 
 Remoção de Clientes: Remove clientes da lista ativa quando eles se desconectam ou a conexão é perdida.
 
 ChatClient.java 💻:
+
 Conexão ao Servidor: O usuário especifica o endereço IP e a porta do servidor para se conectar.
 
 Interface de Linha de Comando: A interação com o chat é feita através do console.
@@ -55,12 +57,12 @@ Compilação ⚙️:
 Abra um terminal ou prompt de comando e navegue até o diretório onde você salvou os arquivos ChatServer.java e ChatClient.java.
 
 Compile o ChatServer.java:
-Bash   javac ChatServer.java
+![alt text](image-3.png)
 
 Isso criará um arquivo ChatServer.class (e ClientHandler.class implicitamente, pois ClientHandler está no mesmo arquivo ou é uma classe interna/dependência direta que o compilador resolve).
 
 Compile o ChatClient.java:
-Bash    javac ChatClient.java
+![alt text](image-4.png)
 
 Isso criará um arquivo ChatClient.class.
 
@@ -70,7 +72,7 @@ Execução ▶️:
 Execute o servidor primeiro, pois os clientes precisarão se conectar a ele.
 
 No terminal, execute:
-Bash   java ChatServer
+![alt text](image-5.png)
 
 O servidor solicitará que você digite a porta para ele escutar (ex: 8080). Após fornecer a porta, ele começará a aguardar conexões de clientes e exibirá "Servidor iniciado na porta [porta]. Aguardando clientes...".
 O console do servidor também permitirá que você digite exportar para salvar o log do chat ou sair para encerrar o servidor.
@@ -81,7 +83,7 @@ Abra um novo terminal (ou múltiplos, se quiser simular vários clientes) para c
 Navegue até o diretório onde os arquivos .class foram gerados (o mesmo da compilação).
 
 Execute o cliente:
-Bash   java ChatClient
+![alt text](image-6.png)
 
 O cliente solicitará:
 Digite o endereço IP do servidor: Se o servidor estiver rodando na mesma máquina, você pode usar localhost ou 127.0.0.1. Se estiver em outra máquina na rede, use o endereço IP dessa máquina.
